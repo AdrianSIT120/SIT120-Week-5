@@ -1,5 +1,17 @@
 -------------------------HTML-------------------------
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+<div id="reverse_text_testing">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse the above test</button>
+</div>
+****************************
+<div id="repeating_test_tetsing">
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
 -------------------------HTML-------------------------
 
 
@@ -13,5 +25,24 @@
 
 
 -------------------------Javascript-------------------------
+var reverse_testing = new Vue({
+  el: '#reverse_text_testing',
+  data: {
+    message: 'Hello World'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
 
+var repeating_test_tetsing = new Vue({
+  el: '#repeating_test_tetsing',
+  data: {
+    message: 'Try to type anything here'
+  }
+})
 -------------------------Javascript-------------------------
+
+https://jsfiddle.net/srpobh3w/
